@@ -11,7 +11,7 @@
         ng-show="person.available"
         ng-hide="person.rate>100">
       <!-- ng-src -->
-      <img class="icons" ng-src="{{person.thumb}}" ng-show="person.thumb"/>
+      <img class="small-icons" ng-src="{{person.thumb}}" ng-show="person.thumb"/>
       <h3>{{person.name}} - {{person.rate | currency}}</h3>
       <div class="remove" ng-click="removePerson(person)">x</div>
       <span class="belt" style="background: {{person.belt}}">{{person.belt}}</span>

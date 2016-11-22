@@ -5,11 +5,12 @@ myApp.config(function($routeProvider) {
 
   $routeProvider
     .when('/home', {
-      templateUrl: 'views/home.html'
+      templateUrl: 'views/home.html',
+      controller: 'ListController'
     })
     .when('/list', {
       templateUrl: 'views/list.html',
-      controller: 'MyFirstController'
+      controller: 'ListController'
     })
     .otherwise({
       redirectTo: '/home'
@@ -20,8 +21,28 @@ myApp.config(function($routeProvider) {
 myApp.run(function() {
 })
 
+// custom directive
+myApp.directive('randomPerson', [function() {
+
+  // restrict 'EA' - using dir as element && attribute
+  return {
+    restrict: 'E',
+    scope: {
+      list: '=',
+      title: '='
+    },
+    // template: '<img class="icons" ng-src="{{list[random].thumb}}">',
+    templateUrl: 'views/random.html',
+    transclude: true,
+    controller: function($scope) {
+      $scope.random = Math.floor(Math.random() * 4)
+    }
+  };
+
+}])
+
 // [] - dependencies, include $scope and func to prevent any conflict
-myApp.controller('MyFirstController', ['$scope', '$http', function($scope, $http) {
+myApp.controller('ListController', ['$scope', '$http', function($scope, $http) {
   // $scope.message = 'Hey, whatsapp, bro?';
 
   // remove element from the list
@@ -47,12 +68,13 @@ myApp.controller('MyFirstController', ['$scope', '$http', function($scope, $http
     $scope.newPerson.rate = '';
   }
 
+  // get data from json file using $http
   $http .get('data/list.json')
         .success(function(data) {
           $scope.list = data;
         })
 
   // convert array of objects into the json file structure
-  console.log(angular.toJson($scope.list));
+  // console.log(angular.toJson($scope.list));
 
 }])
