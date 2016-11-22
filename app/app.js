@@ -1,12 +1,23 @@
 // [] - dependencies
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngRoute']);
 
-myApp.config(function() {
-  console.log('Before your app runs do CONFIG');
+myApp.config(function($routeProvider) {
+
+  $routeProvider
+    .when('/home', {
+      templateUrl: 'views/home.html'
+    })
+    .when('/list', {
+      templateUrl: 'views/list.html',
+      controller: 'MyFirstController'
+    })
+    .otherwise({
+      redirectTo: '/home'
+    })
+
 })
 
 myApp.run(function() {
-  console.log('When your app runs do RUN')
 })
 
 // [] - dependencies, include $scope and func to prevent any conflict
@@ -41,25 +52,29 @@ myApp.controller('MyFirstController', ['$scope', function($scope) {
       name: 'Corw',
       belt: 'blue',
       rate: 50,
-      available: true
+      available: true,
+      thumb: 'content/img/crw.png'
     },
     {
       name: 'Kate',
       belt: 'black',
       rate: 30,
-      available: true
+      available: true,
+      thumb: 'content/img/kate.png'
     },
     {
       name: 'Folko',
       belt: 'orange',
       rate: 10,
-      available: true
+      available: true,
+      thumb: 'content/img/folko.png'
     },
     {
-      name: 'Daria',
+      name: 'Dmitry',
       belt: 'green',
       rate: 60,
-      available: false
+      available: false,
+      thumb: 'content/img/dima.png'
     }
   ];
 }])

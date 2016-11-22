@@ -8,6 +8,13 @@ h1,h2,h3{
   margin: 0;
 }
 
+.icons {
+  height: 30px;
+  width: 30px;
+  float: left;
+  margin: -5px 5px 0 0;
+}
+
 .belt{
   padding: 5px 10px;
   border-radius: 10px;
