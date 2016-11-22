@@ -51,7 +51,7 @@ myApp.controller('MyFirstController', ['$scope', function($scope) {
     {
       name: 'Corw',
       belt: 'blue',
-      rate: 50,
+      rate: 10,
       available: true,
       thumb: 'content/img/crw.png'
     },
@@ -63,11 +63,11 @@ myApp.controller('MyFirstController', ['$scope', function($scope) {
       thumb: 'content/img/kate.png'
     },
     {
-      name: 'Folko',
+      name: 'Ackerman',
       belt: 'orange',
-      rate: 10,
+      rate: 90,
       available: true,
-      thumb: 'content/img/folko.png'
+      thumb: 'content/img/acker.png'
     },
     {
       name: 'Dmitry',
