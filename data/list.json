@@ -1,0 +1,25 @@
+[{
+	"name": "Corw",
+	"belt": "blue",
+	"rate": 10,
+	"available": true,
+	"thumb": "content/img/crw.png"
+}, {
+	"name": "Kate",
+	"belt": "black",
+	"rate": 30,
+	"available": true,
+	"thumb": "content/img/kate.png"
+}, {
+	"name": "Ackerman",
+	"belt": "orange",
+	"rate": 90,
+	"available": true,
+	"thumb": "content/img/acker.png"
+}, {
+	"name": "Dmitry",
+	"belt": "green",
+	"rate": 60,
+	"available": false,
+	"thumb": "content/img/dima.png"
+}]
