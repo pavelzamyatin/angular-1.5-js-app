@@ -56,6 +56,10 @@ myApp.controller('ListController', ['$scope', '$http', function($scope, $http) {
     console.log(removedPerson[0]);
   }
 
+  $scope.removeAll = function() {
+    $scope.list = [];
+  }
+
   // add element to the list using submit
   $scope.addPerson = function() {
     $scope.list.push({
