@@ -1,7 +1,10 @@
 // [] - dependencies
 var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate']);
 
-myApp.config(function($routeProvider) {
+myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+
+  // to avoid # in urls
+  // $locationProvider.html5Mode(true);
 
   $routeProvider
     .when('/home', {
@@ -24,7 +27,7 @@ myApp.config(function($routeProvider) {
       redirectTo: '/home'
     })
 
-})
+}])
 
 myApp.run(function() {
 })
