@@ -12,6 +12,14 @@ myApp.config(function($routeProvider) {
       templateUrl: 'views/list.html',
       controller: 'ListController'
     })
+    .when('/contact', {
+      templateUrl: 'views/contact.html',
+      controller: 'ContactController'
+    })
+    .when('/contact-success', {
+      templateUrl: 'views/contact-success.html',
+      controller: 'ContactController'
+    })
     .otherwise({
       redirectTo: '/home'
     })
@@ -83,5 +91,13 @@ myApp.controller('ListController', ['$scope', '$http', function($scope, $http) {
 
   // convert array of objects into the json file structure
   // console.log(angular.toJson($scope.list));
+
+}])
+
+myApp.controller('ContactController', ['$scope', '$location', function($scope, $location) {
+
+  $scope.sendMessage = function() {
+    $location.path('contact-success');
+  }
 
 }])

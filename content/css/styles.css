@@ -116,6 +116,15 @@ main{
   margin: 10px 0;
 }
 
+.content textarea{
+  width: 90%;
+  height: 100px;
+  padding: 10px 5%;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  margin: 10px 0;
+}
+
 .content input[type="submit"]:last-child{
   width: 150px;
   display: block;
@@ -138,7 +147,7 @@ main{
 
 /* main view animation */
 main.ng-enter {
-  transition: 1s linear all;
+  transition: 0.5s linear all;
   opacity: 0;
 }
 
@@ -174,4 +183,19 @@ main.ng-enter.ng-enter-active {
 #people-list li.ng-leave-stagger {
   transition-delay: 0.2s;
   transition-duration: 0;
+}
+
+
+/* Validating form styles*/
+/*input.ng-valid.ng-touched, textarea.ng-valid.ng-touched {
+  border: 2px solid green;
+}*/
+
+/*input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+  border: 2px solid red;
+}*/
+
+input[disabled="disabled"] {
+  opacity: 0.4;
+  cursor: not-allowed !important;
 }
