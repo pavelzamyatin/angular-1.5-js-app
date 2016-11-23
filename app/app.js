@@ -1,5 +1,5 @@
 // [] - dependencies
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate']);
 
 myApp.config(function($routeProvider) {
 
@@ -33,6 +33,9 @@ myApp.directive('randomPerson', [function() {
     },
     // template: '<img class="icons" ng-src="{{list[random].thumb}}">',
     templateUrl: 'views/random.html',
+    // replace custom tag with tag from random.html
+    replace: true,
+    // transclude content inside sustom directive
     transclude: true,
     controller: function($scope) {
       $scope.random = Math.floor(Math.random() * 4)

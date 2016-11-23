@@ -67,6 +67,7 @@ main{
 
 .content{
   padding: 20px;
+  overflow: hidden;
 }
 
 .content button,
@@ -131,4 +132,40 @@ main{
   color: crimson;
   cursor: pointer;
   margin-left: 10px;
+}
+
+/* ANIMATIONS */
+
+/* main view animation */
+main.ng-enter {
+  transition: 1s linear all;
+  opacity: 0;
+}
+
+main.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+/* enter list animation */
+#people-list li.ng-enter {
+  transition: 0.4s linear all;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+#people-list li.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* leave list animation */
+#people-list li.ng-leave {
+  transition:0.4s linear all;
+  opacity:1;
+  transform: translateY(0);
+}
+
+#people-list li.ng-leave.ng-leave-active {
+  opacity:0;
+  transform: translateX(-100%);
 }

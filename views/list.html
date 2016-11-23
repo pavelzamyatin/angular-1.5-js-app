@@ -5,7 +5,7 @@
 
   <input type="text" ng-model="search" placeholder="Search for any result" />
 
-  <ul>
+  <ul id="people-list">
     <!-- ng-repeat, ng-show and ng-hide directives -->
     <li ng-repeat="person in list | orderBy: order | filter: search"
         ng-show="person.available"
@@ -14,7 +14,7 @@
       <img class="small-icons" ng-src="{{person.thumb}}" ng-show="person.thumb"/>
       <h3>{{person.name}} - {{person.rate | currency}}</h3>
       <div class="remove" ng-click="removePerson(person)">x</div>
-      <span class="belt" style="background: {{person.belt}}">{{person.belt}}</span>
+      <span class="belt" style="background: {{person.belt}}">{{person.belt}} belt</span>
     </li>
   </ul>
 
